@@ -20,3 +20,6 @@ RUN /bin/bash -c "source activate pymice \
 # Configure notebooks to strip output before saving to improve version control
 RUN mkdir /home/$NB_USER/.jupyter
 COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
+
+# Ensure container does not run as root
+USER $NB_USER
