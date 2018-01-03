@@ -15,3 +15,7 @@ RUN conda config --system --remove channels conda-forge \
 RUN /bin/bash -c "source activate pymice \
     && pip install -q --exists-action w PyMICE \
     && source deactivate"
+
+# Configure notebooks to strip output before saving to improve version control
+RUN mkdir /home/$NB_USER/.jupyter
+COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
