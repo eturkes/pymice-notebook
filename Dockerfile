@@ -2,7 +2,8 @@ FROM jupyter/minimal-notebook:2c80cf3537ca
 
 LABEL maintainer="Emir Turkes eturkes@bu.edu"
 
-# No need for root
+# Run unprivalaged
+# Variable, referring to configured user "jovyan", is derived from base image
 USER $NB_USER
 
 # Install Anaconda into a new conda environment
