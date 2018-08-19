@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:2c80cf3537ca
+FROM jupyter/minimal-notebook:177037d09156
 
 LABEL maintainer="Emir Turkes eturkes@bu.edu"
 
