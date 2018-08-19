@@ -9,7 +9,7 @@ USER $NB_USER
 # Install Anaconda into a new conda environment
 # Remove conda-forge for pure upstream Anaconda
 RUN conda config --system --remove channels conda-forge \
-    && conda create -yq -n pymice Python=3.6.6 Anaconda
+    && conda create -yq -n pymice Python=3.6.5 anaconda
 
 # Install PyMICE into newly created conda environment
 # Conda does not support sh, so use bash
