@@ -16,7 +16,7 @@
 #
 #    Emir Turkes can be contacted at eturkes@bu.edu
 
-FROM jupyter/minimal-notebook:177037d09156
+FROM jupyter/minimal-notebook:61d8aaedaeaf
 
 LABEL maintainer="Emir Turkes eturkes@bu.edu"
 
