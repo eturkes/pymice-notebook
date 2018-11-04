@@ -36,7 +36,7 @@ RUN /bin/bash -c "source activate PyMICE \
     && source deactivate"
 
 # Configure notebooks to strip output before saving to improve version control
-COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
+COPY jupyter_notebook_config.py /home/jovyan/.jupyter/
 
 # Ensure container does not run as root
 USER $NB_USER
