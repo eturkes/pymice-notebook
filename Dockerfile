@@ -31,8 +31,8 @@ RUN conda config --system --remove channels conda-forge \
 
 # Install PyMICE into newly created conda environment
 # Conda does not support sh, so use bash
-RUN /bin/bash -c "source activate PyMICE \
-    && pip install -q --exists-action w PyMICE \
+RUN /bin/bash -c "source activate pymice \
+    && pip install -q --exists-action w pymice \
     && source deactivate"
 
 # Configure notebooks to strip output before saving to improve version control
