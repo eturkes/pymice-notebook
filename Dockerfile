@@ -26,8 +26,9 @@ USER $NB_USER
 
 # Install Anaconda into a new conda environment
 # Remove conda-forge for pure upstream Anaconda
+# PyHamcrest is required by twisted, but does not automatically install for some reason
 RUN conda config --system --remove channels conda-forge \
-    && conda create -yq -n pymice python=3.6.6 anaconda
+    && conda create -yq -n pymice python=3.6.6 anaconda pyhamcrest
 
 # Install PyMICE into newly created conda environment
 # Conda does not support sh, so use bash
