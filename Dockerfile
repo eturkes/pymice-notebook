@@ -1,4 +1,22 @@
-FROM jupyter/minimal-notebook:2c80cf3537ca
+#    This file is part of pymice-notebook.
+#    Copyright (C) 2018  Emir Turkes
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#    Emir Turkes can be contacted at eturkes@bu.edu
+
+FROM jupyter/minimal-notebook
 
 LABEL maintainer="Emir Turkes eturkes@bu.edu"
 
@@ -9,17 +27,16 @@ USER $NB_USER
 # Install Anaconda into a new conda environment
 # Remove conda-forge for pure upstream Anaconda
 RUN conda config --system --remove channels conda-forge \
-    && conda create -yq -n PyMICE Python=3.5.4 Anaconda
+    && conda create -yq -n pymice python=3.5.4 anaconda
 
 # Install PyMICE into newly created conda environment
 # Conda does not support sh, so use bash
-RUN /bin/bash -c "source activate PyMICE \
-    && pip install -q --exists-action w PyMICE \
+RUN /bin/bash -c "source activate pymice \
+    && pip install -q --exists-action w pymice \
     && source deactivate"
 
 # Configure notebooks to strip output before saving to improve version control
-RUN mkdir /home/$NB_USER/.jupyter
-COPY jupyter_notebook_config.py /home/$NB_USER/.jupyter/
+COPY jupyter_notebook_config.py /home/jovyan/.jupyter/
 
 # Ensure container does not run as root
 USER $NB_USER
