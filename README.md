@@ -19,4 +19,6 @@
 -->
 
 # pymice-notebook
+#### *This project is generally feature complete*
+
 Jupyter Notebook for Intellicage analysis using PyMICE
