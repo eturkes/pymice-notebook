@@ -14,11 +14,11 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    Emir Turkes can be contacted at eturkes@bu.edu
+#    Emir Turkes can be contacted at emir.turkes@eturkes.com
 
 FROM jupyter/minimal-notebook
 
-LABEL maintainer="Emir Turkes eturkes@bu.edu"
+LABEL maintainer="Emir Turkes emir.turkes@eturkes.com"
 
 # Run unprivalaged
 # Variable, referring to configured user "jovyan", is derived from base image
